@@ -8,4 +8,10 @@ publish = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+fixedbitset = "0.4.2"
+itertools = "0.10.5"
+lazy_static = "1.4.0"
+nom = "7.1.1"
 pico-args = "0.5.0"
+ranges = "0.3.3"
+regex = "1.7.0"
