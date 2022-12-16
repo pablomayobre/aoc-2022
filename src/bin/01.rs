@@ -3,7 +3,7 @@ use regex::Regex;
 
 pub fn part_one(input: &str) -> Option<u32> {
     // Split input by Elves marked by two new line characters
-    Regex::new(r"\n\w*\n")
+    let value = Regex::new(r"\n\s*\n")
         .unwrap()
         .split(input)
         // Each Elf contains a series of numbers split by newline characters
@@ -16,12 +16,14 @@ pub fn part_one(input: &str) -> Option<u32> {
         // Sort by how many calories they have consumed
         .sorted_by(|a, b| Ord::cmp(b, a))
         // Find the Elf with the largest calories intake
-        .next()
+        .next();
+
+    value
 }
 
 pub fn part_two(input: &str) -> Option<u32> {
     // Split input by Elves marked by two new line characters
-    let mut iter = Regex::new("\nw*\n")
+    let mut iter = Regex::new(r"\n\s*\n")
         .unwrap()
         .split(input)
         // Each Elf contains a series of numbers split by newline characters
